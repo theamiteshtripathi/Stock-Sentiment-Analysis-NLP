@@ -1,4 +1,4 @@
-![Banner](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fstock-market&psig=AOvVaw05Q5iWABlzDFPs0UFyUUeg&ust=1690500036094000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCMDHi8XBrYADFQAAAAAdAAAAABAE)
+![Banner](https://img.freepik.com/free-vector/global-business-background-with-stock-chart-blue-tone_53876-117483.jpg?w=1380&t=st=1690413977~exp=1690414577~hmac=d11431c141fd5b375ba1c3e8adfed0f86aab1ca2912f3c04fc96c78ef027034a)
 
 # 📈🗞️💸 Stock Sentiment Analysis 
 
