@@ -9,13 +9,13 @@ This project uses machine learning to predict stock price movements based on the
 1. Clone the repository: 
 
 ```bash
-git clone https://github.com/your_username/your_repository.git
+git clone https://github.com/theamiteshtripathi/Stock-Sentiment-Analysis-NLP
 ```
 
 2. Change directory: 
 
 ```bash
-cd your_repository
+cd Stock-Sentiment-Analysis-NLP
 ```
 
 3. Install the required packages: 

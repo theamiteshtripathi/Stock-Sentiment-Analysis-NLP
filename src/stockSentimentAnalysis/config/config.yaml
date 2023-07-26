@@ -1,0 +1,27 @@
+# Configuration for the Stock Sentiment Analysis project
+
+# Data settings
+data:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+
+# Model settings
+model:
+  model_dir: "models"
+  model_filename: "final_model.joblib"
+
+# Preprocessing settings
+preprocessing:
+  remove_stopwords: True
+  use_stemming: False
+  use_lemmatization: True
+
+# Training settings
+training:
+  test_size: 0.2
+  random_state: 42
+  max_iter: 1000
+
+# Evaluation settings
+evaluation:
+  metrics: ["accuracy", "precision", "recall", "f1"]
