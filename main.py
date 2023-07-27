@@ -1,15 +1,14 @@
 import argparse
-from preprocessing.clean_text import clean_text, load_and_process_data
-from models.train import train_model
-from models.evaluate import evaluate_model
-from models.predict import predict_headline_sentiment
-from visualization.visualize import visualize_results
-from config.configuration import Config
+from src.stockSentimentAnalysis.preprocessing.clean_text import load_and_process_data
+from src.stockSentimentAnalysis.models.train import train_model
+from src.stockSentimentAnalysis.models.evaluate import evaluate_model
+from src.stockSentimentAnalysis.models.predict import predict_headline_sentiment
+from src.stockSentimentAnalysis.visualization.visualize import visualize_results
 
 def main(args):
     # Load and preprocess the data
     print("Loading and preprocessing data...")
-    data = load_and_process_data(Config.RAW_DATA_DIR)
+    data = load_and_process_data("data/raw/Data.csv")
     cleaned_data = clean_text(data)
 
     # Train the model
@@ -29,7 +28,7 @@ def main(args):
     # Visualize the results
     if args.visualize:
         print("Visualizing results...")
-        visualize_results(model, cleaned_data)
+        visualize_results(cleaned_data)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run the Stock Sentiment Analysis project.')
