@@ -1,34 +1,23 @@
-from joblib import load
 from src.stockSentimentAnalysis.preprocessing.clean_text import clean_text
+from sklearn.feature_extraction.text import CountVectorizer
 
-def predict(model_filepath, text):
-    # Load the model
-    model = load(model_filepath)
+def predict_headline_sentiment(model, headline):
+    """
+    Make a prediction on the sentiment of a headline using a trained model.
+
+    Parameters:
+    model (object): The trained model
+    headline (str): The headline to predict the sentiment of
+
+    Returns:
+    str: The predicted sentiment of the headline
+    """
 
     # Clean the text
-    cleaned_text = clean_text(text)
-
-    # Make the prediction
-    prediction = model.predict([cleaned_text])
-
-    return prediction
-
-def predict_headline_sentiment(model_filepath, headline):
-    # Load the trained model
-    model = load(model_filepath)
-
-    # Preprocess the headline
     cleaned_headline = clean_text(headline)
 
-    # Convert the cleaned headline to a pandas series
-    cleaned_headline_series = pd.Series(cleaned_headline)
+    # Make the prediction
+    prediction = model.predict([cleaned_headline])
 
-    # Use the model to predict the sentiment of the headline
-    prediction = model.predict(cleaned_headline_series)
+    return 'Positive' if prediction == 1 else 'Negative'
 
-    return prediction[0]
-
-# Usage
-# model_filepath = 'path_to_your_saved_model'
-# text = 'Your raw text input here'
-# prediction = predict(model_filepath, text)
