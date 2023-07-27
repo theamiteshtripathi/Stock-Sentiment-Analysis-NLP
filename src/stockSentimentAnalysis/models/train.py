@@ -7,10 +7,7 @@ from sklearn.model_selection import train_test_split
 from joblib import dump
 from src.stockSentimentAnalysis.preprocessing.clean_text import load_and_process_data
 
-def train_model(filepath):
-    # Load and process the data
-    data = load_and_process_data(filepath)
-    
+def train_model(data):
     # Split the data into training and test sets
     train, test = train_test_split(data, test_size=0.2, random_state=42)
     
@@ -26,6 +23,9 @@ def train_model(filepath):
     
     # Save the model
     dump(model_pipeline, 'models/model.joblib')
+
+    # Return the model and the test data
+    return model_pipeline, test["Combined_News"], test["Label"]
 
 # Usage
 # filepath = 'path_to_your_data_file'

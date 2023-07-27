@@ -8,16 +8,15 @@ from src.stockSentimentAnalysis.visualization.visualize import visualize_results
 def main(args):
     # Load and preprocess the data
     print("Loading and preprocessing data...")
-    data = load_and_process_data("data/raw/Data.csv")
-    cleaned_data = clean_text(data)
+    data = load_and_process_data(args.data)
 
     # Train the model
     print("Training model...")
-    model, X_test, y_test = train_model(cleaned_data)
+    model, X_test, y_test = train_model(data)
 
     # Evaluate the model
     print("Evaluating model...")
-    evaluate_model(model, cleaned_data)
+    evaluate_model(model, X_test, y_test)
 
     # Make a prediction
     if args.headline:
@@ -28,10 +27,11 @@ def main(args):
     # Visualize the results
     if args.visualize:
         print("Visualizing results...")
-        visualize_results(cleaned_data, model, X_test, y_test)
+        visualize_results(data, model, X_test, y_test)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run the Stock Sentiment Analysis project.')
+    parser.add_argument('--data', type=str, help='The path to the data file.')
     parser.add_argument('--headline', type=str, help='A headline to predict the sentiment of.')
     parser.add_argument('--visualize', action='store_true', help='Whether to visualize the results.')
     args = parser.parse_args()

@@ -2,25 +2,20 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 from joblib import load
 from src.stockSentimentAnalysis.preprocessing.clean_text import load_and_process_data
 
-def evaluate_model(model_filepath, test_filepath):
-    # Load the model
-    model = load(model_filepath)
-
-    # Load and process the test data
-    test_data = load_and_process_data(test_filepath)
-
+def evaluate_model(model, X_test, y_test):
     # Make predictions on the test data
-    predictions = model.predict(test_data['Combined_News'])
-
-    # Calculate and print the accuracy
-    accuracy = accuracy_score(test_data['Label'], predictions)
-    print(f'Accuracy: {accuracy}')
-
+    predictions = model.predict(X_test)
+    
+    # Calculate accuracy
+    accuracy = accuracy_score(y_test, predictions)
+    print(f"Test Accuracy: {accuracy}")
+    
     # Print the classification report
-    print(classification_report(test_data['Label'], predictions))
-
+    print(classification_report(y_test, predictions))
+    
     # Print the confusion matrix
-    print(confusion_matrix(test_data['Label'], predictions))
+    print(confusion_matrix(y_test, predictions))
+
 
 # Usage
 # model_filepath = 'path_to_your_saved_model'
