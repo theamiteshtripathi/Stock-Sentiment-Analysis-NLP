@@ -13,7 +13,7 @@ def main(args):
 
     # Train the model
     print("Training model...")
-    model = train_model(cleaned_data)
+    model, X_test, y_test = train_model(cleaned_data)
 
     # Evaluate the model
     print("Evaluating model...")
@@ -28,7 +28,7 @@ def main(args):
     # Visualize the results
     if args.visualize:
         print("Visualizing results...")
-        visualize_results(cleaned_data)
+        visualize_results(cleaned_data, model, X_test, y_test)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run the Stock Sentiment Analysis project.')

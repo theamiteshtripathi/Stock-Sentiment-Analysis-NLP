@@ -1,6 +1,6 @@
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from joblib import load
-from clean_text import load_and_process_data
+from src.stockSentimentAnalysis.preprocessing.clean_text import load_and_process_data
 
 def evaluate_model(model_filepath, test_filepath):
     # Load the model

@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 from joblib import dump
-from clean_text import load_and_process_data
+from src.stockSentimentAnalysis.preprocessing.clean_text import load_and_process_data
 
 def train_model(filepath):
     # Load and process the data

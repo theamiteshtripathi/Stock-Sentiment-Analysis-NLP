@@ -14,7 +14,7 @@ def clean_text(text):
     return text
 
 def load_and_process_data(filepath):
-    data = pd.read_csv(filepath)
+    data = pd.read_csv(filepath, encoding='ISO-8859-1')
     data["Combined_News"] = data.filter(regex=("Top.*")).apply(lambda x: "".join(str(x.values)), axis=1)
     data["Combined_News"] = data["Combined_News"].apply(clean_text)
     return data

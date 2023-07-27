@@ -1,5 +1,5 @@
 from joblib import load
-from clean_text import clean_text
+from src.stockSentimentAnalysis.preprocessing.clean_text import clean_text
 
 def predict(model_filepath, text):
     # Load the model

@@ -14,7 +14,7 @@ The dataset used in this project is the [Daily News for Stock Market Prediction]
 
 ## 🧰 Requirements
 
-The dependencies for this project are listed in the `environment.yml` file. To install these dependencies, run the following command:
+The dependencies for this project are listed in the `environment.yaml` file. To install these dependencies, run the following command:
 
 ```bash
 conda env create -f environment.yml
@@ -25,7 +25,7 @@ conda env create -f environment.yml
 To run the entire project, use the following command:
 
 ```bash
-python run.py --headline "Your headline text here" --visualize
+python main.py --headline "Your headline text here" --visualize
 ```
 
 Replace `"Your headline text here"` with the actual headline text that you want to predict.
